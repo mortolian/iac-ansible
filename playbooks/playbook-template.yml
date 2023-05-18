@@ -1,0 +1,7 @@
+# Comment about what the playbook does.
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Example message
+      msg: "Sample task"

@@ -40,6 +40,7 @@ ssh-copy-id {ip/host address}
 
 ```bash
 ansible-playbook playbooks/update-ubuntu-server.yml -i inventory.yml -K
+ansible-playbook playbooks/update-pi-hole.yml -i inventory.yml -K
 ```
 
 The `-K` option will allow for the `sudo` user password to be prompted for each

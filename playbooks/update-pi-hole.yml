@@ -1,0 +1,12 @@
+# This updates the popular PIhole DNS server
+# https://pi-hole.net/
+
+---
+- hosts: pihole
+  become: true
+  tasks:
+    - name: Update PiHole
+      ansible.builtin.raw: pihole -up
+
+    - name: Update PiHole Gravity
+      ansible.builtin.raw: pihole -g

@@ -1,3 +1,7 @@
+# This playbook updates an ubuntu server or desktop installation
+# using apt.
+# Version 20.04+
+
 ---
 - hosts: ubuntu
   become: true
@@ -11,12 +15,16 @@
       apt:
         upgrade: dist
 
+    - name: Remove unused dependencies
+      apt:
+        autoremove: true
+
     - name: Check if reboot required file exists
       stat:
         path: "/var/run/reboot-required"
       register: reboot_file
 
-    - name: Schedule a system reboot if required
+    - name: Reboot system if required
       ansible.builtin.reboot:
         msg: "Reboot initiated by Ansible after update."
         reboot:
