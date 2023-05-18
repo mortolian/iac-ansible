@@ -18,6 +18,6 @@
 
     - name: Schedule a system reboot if required
       ansible.builtin.reboot:
-        msg: "Reboot initiated by Ansible after OS update"
-        reboot_timeout: 3600
+        msg: "Reboot initiated by Ansible after update."
+        reboot:
       when: reboot_file.stat.exists == true
