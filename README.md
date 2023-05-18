@@ -55,3 +55,10 @@ host in the inventory.
 
 Anyone can contribute by submitting a pull request and you are welcome to use the
 repo in any way you like.
+
+### Some Todos
+
+- Find a way to automate Ansible tasks from a trusted host and user.
+- Create an inventory template file for a single host. Have all the inventory options available and uncomment only the ones you need.
+- Create a playbook template to make adding more playbooks simpler.
+- Continuesly add more playbooks.
