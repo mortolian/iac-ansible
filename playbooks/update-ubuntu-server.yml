@@ -1,9 +1,23 @@
 ---
 - hosts: ubuntu
-  become: yes
+  become: true
   tasks:
     - name: Update apt cache
-      apt: update_cache=yes cache_valid_time=3600
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
 
     - name: Upgrade all apt packages
-      apt: upgrade=dist
+      apt:
+        upgrade: dist
+
+    - name: Check if reboot required file exists
+      stat:
+        path: "/var/run/reboot-required"
+      register: reboot_file
+
+    - name: Schedule a system reboot if required
+      ansible.builtin.reboot:
+        msg: "Reboot initiated by Ansible after OS update"
+        reboot_timeout: 3600
+      when: reboot_file.stat.exists == true
