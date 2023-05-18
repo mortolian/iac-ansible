@@ -41,6 +41,7 @@ ssh-copy-id {ip/host address}
 ```bash
 ansible-playbook playbooks/update-ubuntu-server.yml -i inventory.yml -K
 ansible-playbook playbooks/update-pi-hole.yml -i inventory.yml -K
+ansible-playbook playbooks/update-proxmox-node.yml -i inventory.yml -K
 ```
 
 The `-K` option will allow for the `sudo` user password to be prompted for each
@@ -61,5 +62,8 @@ repo in any way you like.
 
 - Find a way to automate Ansible tasks from a trusted host and user.
 - Create an inventory template file for a single host. Have all the inventory options available and uncomment only the ones you need.
-- Create a playbook template to make adding more playbooks simpler.
-- Continuesly add more playbooks.
+- Document automation options with make file, cron jobs etc.
+
+### Ideas for playbooks
+
+- Playbook which changes passwords for a large number of machines when a user exists. <https://www.howtouselinux.com/post/change-user-password-with-ansible>

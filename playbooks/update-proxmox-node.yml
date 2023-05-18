@@ -1,0 +1,28 @@
+# This playbook updates Proxmox nodes.
+---
+- hosts: proxmox
+  become: true
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Upgrade all apt packages
+      apt:
+        upgrade: dist
+
+    - name: Remove unused dependencies
+      apt:
+        autoremove: true
+
+    - name: Check if reboot required file exists
+      stat:
+        path: "/var/run/reboot-required"
+      register: reboot_file
+
+    - name: Reboot system if required
+      ansible.builtin.reboot:
+        msg: "Reboot initiated by Ansible after update."
+        reboot:
+      when: reboot_file.stat.exists == true
