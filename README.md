@@ -1,8 +1,9 @@
 # Ansible Template
 
-The purpose of this repo is to gather all my knowledge and build up a small library of repetative
-work I do with Ansible. The idea is to get better over time and do more complex
-configurations while saving a lot of time.
+The purpose of this repo is to gather all my knowledge and build up a small library of repetative work I do with Ansible. The idea is to get better over time and do more complex configurations while saving a lot of time.
+
+What is really nice about Ansible is that you can use Python to do more
+scripted and complex work.
 
 ## Install Ansible on Macbook Using Homebrew
 
