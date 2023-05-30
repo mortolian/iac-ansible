@@ -64,7 +64,10 @@ repo in any way you like.
 - Find a way to automate Ansible tasks from a trusted host and user.
 - Create an inventory template file for a single host. Have all the inventory options available and uncomment only the ones you need.
 - Document automation options with make file, cron jobs etc.
+- Document simpler commands to quickly run a playbook on a specific host to setup something like docker.
 
 ### Ideas for playbooks
 
 - Playbook which changes passwords for a large number of machines when a user exists. <https://www.howtouselinux.com/post/change-user-password-with-ansible>
+- Ubuntu, setup unattended updates with email notifications.
+- Ubuntu, setup secure firewall.
