@@ -5,6 +5,12 @@ The purpose of this repo is to gather all my knowledge and build up a small libr
 What is really nice about Ansible is that you can use Python to do more
 scripted and complex work.
 
+> A great way to manage and also automate tasks with Ansible is to use Ansible Semaphore.
+>
+> - <https://www.ansible-semaphore.com/>
+> - <https://docs.ansible-semaphore.com/>
+> - [Docker Installation](https://docs.ansible-semaphore.com/administration-guide/installation#docker)
+
 ## Install Ansible on Macbook Using Homebrew
 
 ```bash
